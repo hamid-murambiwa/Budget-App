@@ -1,0 +1,2 @@
+class Proceeding < ApplicationRecord
+end
