@@ -1,0 +1,9 @@
+<%= form_with model: @group, url: user_groups_path, scope: :group, data: { turbo: false } do |form| %>
+
+    <%= form.text_field :name, placeholder: 'Name', class: 'form-inp'%>
+
+    <%= form.text_field :icon, placeholder: 'Icon', class: 'form-inp' %>
+
+    <%= form.submit :Submit , class: "add-button" %>
+
+<% end %>
