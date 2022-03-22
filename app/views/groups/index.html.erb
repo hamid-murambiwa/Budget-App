@@ -1,2 +1,11 @@
 <h1>Categories</h1>
 <%= link_to 'Add a category', new_user_group_path(@user), class: 'add-button' %>
+<% @groups.each do |group| %>
+    <%= link_to user_group_path(@user.id, group.id) do %>
+    <%= group.name %>
+    <%= image_tag(group.icon, width:'150px', height:'160px', class:'user-img') %>
+    <% end %>
+    <div class="btn-con">
+      <%= button_to "Delete", user_group_url(@user.id, group.id), :method => :delete %>
+    </div>
+<% end %>

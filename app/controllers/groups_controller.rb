@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
     def index
         @user = current_user
+        @groups = @user.groups
     end
 
     def new
@@ -17,6 +18,20 @@ class GroupsController < ApplicationController
             print 'Something went wrong'
             render :new
         end
+    end
+
+    def show
+        @group = Group.find(params[:id])
+        @proceedings = Proceeding.where(group_id: params[:id])
+    end
+
+    def destroy
+        @group = Group.find(params[:id])
+        @proceedings = Proceeding.where(group_id: params[:id])
+        @proceedings.each(&:destroy)
+        @group.destroy!
+        redirect_to user_groups_path
+        flash[:success] = 'Group was deleted!'
     end
 
     private

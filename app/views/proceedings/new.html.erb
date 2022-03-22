@@ -1,0 +1,9 @@
+<%= form_with model: @proceeding, url: user_group_proceedings_path, scope: :proceeding, data: { turbo: false } do |form| %>
+
+    <%= form.text_field :name, placeholder: 'Name', class: 'form-inp'%>
+
+    <%= form.number_field :amount, placeholder: 'amount', class: 'form-inp' %>
+
+    <%= form.submit :Submit , class: "add-button" %>
+
+<% end %>
