@@ -1,11 +1,26 @@
-<h1>Categories</h1>
-<%= link_to 'Add a category', new_user_group_path(@user), class: 'add-button' %>
-<% @groups.each do |group| %>
-    <%= link_to user_group_path(@user.id, group.id) do %>
-    <%= group.name %>
-    <%= image_tag(group.icon, width:'150px', height:'160px', class:'user-img') %>
+<%= render 'layouts/menu' %>
+<header>
+  <span class='back-arrow'>&#9776;</span>
+  <h2>Categories</h2>
+  <span class='back-arrow'>&#9740;</span>
+</header>
+<section class='container'>
+  <div class='grid-container'>
+    <% @groups.each do |group| %>
+        <div class='grid-item'>
+        <%= image_tag(group.icon, width:'100px', height:'110px', class:'user-img') %>
+        <div class='details'>
+          <%= link_to group.name, user_group_path(@user.id, group.id) %>
+          <%= group.created_at.strftime(" %d, %B, %Y") %>
+        </div>
+        <div class="delete-btn-con">
+          <%= Proceeding.where(group_id: group.id).sum(:amount) %>
+          <%= button_to "Delete", user_group_url(@user.id, group.id), :method => :delete %>
+        </div>
+      </div>
     <% end %>
-    <div class="btn-con">
-      <%= button_to "Delete", user_group_url(@user.id, group.id), :method => :delete %>
-    </div>
-<% end %>
+  </div>
+  <div class='add-btn-con'>
+    <%= link_to 'Add Category', new_user_group_path(@user), class: 'add-button' %>
+  </div>
+</section>

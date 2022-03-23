@@ -14,7 +14,14 @@ class ProceedingsController < ApplicationController
             render :new
         end
     end
-    
+
+    def destroy
+        @proceeding = Proceeding.find(params[:id])
+        @proceeding.destroy!
+        redirect_to user_group_path
+        flash[:success] = 'Transaction was deleted!'
+    end
+
     private
 
     def proceeding_params
