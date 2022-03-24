@@ -10,7 +10,7 @@
     <%= form_with model: @group, url: user_groups_path, scope: :group, data: { turbo: false } do |form| %>
       <%= form.text_field :name, placeholder: 'Name', class: 'form-inp', :required => true %>
 
-      <%= form.text_field :icon, placeholder: 'Icon', class: 'form-inp' %>
+      <%= form.url_field :icon, placeholder: 'Enter a link to an icon or leave empty', class: 'form-inp' %>
 
       <div class='btn-con'>
         <%= form.submit :Submit , class: "submit-button" %>
