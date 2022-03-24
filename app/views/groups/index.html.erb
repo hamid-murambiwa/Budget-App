@@ -1,1 +1,33 @@
-<h1>Groups</h1>
+<header class='header-1'>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  <span class='back-arrow'>&#9776;</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+    <li><%= link_to 'Account Settings', edit_user_registration_path, class: "nav-link" %></li>
+    <li><%= link_to 'Logout', '/users/sign_out', class: "nav-link" %></li>
+    </ul>
+  </div>
+  <h2>Categories</h2>
+  <span class='back-arrow'>&#9740;</span>
+</header>
+<section class='container'>
+  <div class='grid-container'>
+    <% @groups.each do |group| %>
+        <div class='grid-item'>
+        <%= image_tag(group.icon, width:'100px', height:'110px', class:'user-img') %>
+        <div class='details'>
+          <%= link_to group.name, user_group_path(@user.id, group.id) %>
+          <%= group.created_at.strftime(" %d, %B, %Y") %>
+        </div>
+        <div class="delete-btn-con">
+          <%= Proceeding.where(group_id: group.id).sum(:amount) %>
+          <%= button_to "Delete", user_group_url(@user.id, group.id), :method => :delete %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class='add-btn-con'>
+    <%= link_to 'Add Category', new_user_group_path(@user), class: 'add-button' %>
+  </div>
+</section>
