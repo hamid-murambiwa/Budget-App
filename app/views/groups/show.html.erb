@@ -10,8 +10,8 @@
     <h1><%= @group.name %> category</h1>
   </div>
   <div class='gift-con'>
-  <h1>Gift credit</h1>
-  <p>$ <%= Proceeding.where(group_id: @group.id).sum(:amount) %></p>
+    <h1>Gift credit</h1>
+    <p>$ <%= Proceeding.where(group_id: @group.id).sum(:amount) %></p>
   </div>
   <div class='grid-container'>
     <% @proceedings.each do |proceeding| %>
@@ -31,6 +31,6 @@
     <% end %>
   </div>
   <div class='add-btn-con'>
-  <%= link_to 'Add Transaction', new_user_group_proceeding_url(current_user.id, @group.id), class: 'add-button' %>
+    <%= link_to 'Add Transaction', new_user_group_proceeding_url(current_user.id, @group.id), class: 'add-button' %>
   </div>
 </section>
