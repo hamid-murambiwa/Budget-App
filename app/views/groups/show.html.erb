@@ -1,0 +1,36 @@
+<header>
+  <%= link_to user_groups_path(current_user.id), class: 'back-arrow' do %>
+    &#10132;
+  <% end %>
+  <h2>Transactions</h2>
+  <span class='back-arrow'>&#9740;</span>
+</header>
+<section class='container'>
+  <div class='title-con'>
+    <h1><%= @group.name %> category</h1>
+  </div>
+  <div class='gift-con'>
+    <h1>Gift credit</h1>
+    <p>$ <%= Proceeding.where(group_id: @group.id).sum(:amount) %></p>
+  </div>
+  <div class='grid-container'>
+    <% @proceedings.each do |proceeding| %>
+      <div class='grid-item'>
+      <div class='transaction-con'>
+      <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-transaction-accounting-flaticons-flat-flat-icons-2.png"/>
+      <div class='details'>
+        <p><%= proceeding.name %></p>
+        <p><%= proceeding.created_at.strftime(" %d, %B, %Y") %></p>
+      </div>
+      </div>
+      <div class="delete-btn-con">
+        <p>$ <%= proceeding.amount %></p>
+        <%= button_to "Delete", user_group_proceeding_url(current_user.id, proceeding.group_id, proceeding.id), :method => :delete %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+  <div class='add-btn-con'>
+    <%= link_to 'Add Transaction', new_user_group_proceeding_url(current_user.id, @group.id), class: 'add-button' %>
+  </div>
+</section>
