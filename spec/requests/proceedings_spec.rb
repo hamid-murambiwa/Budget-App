@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Proceedings", type: :request do
+RSpec.describe 'Proceedings', type: :request do
   include Devise::Test::IntegrationHelpers
   let(:user) { User.create(name: 'Hamid', email: 'machipisajunior@mail.com', password: '123456') }
   let(:group) { Group.create(name: 'Transport', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaKTCERY75vBXcd1Hc4-fDXXoePpfkWPEjqQ&usqp=CAU', user_id: user.id) }

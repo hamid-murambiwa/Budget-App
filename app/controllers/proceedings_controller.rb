@@ -9,11 +9,11 @@ class ProceedingsController < ApplicationController
     @proceeding.group_id = params[:group_id]
 
     if @proceeding.save
-        redirect_to user_group_path(current_user.id, @proceeding.group_id)
-        flash[:success] = 'Transaction has been successfully created!'
+      redirect_to user_group_path(current_user.id, @proceeding.group_id)
+      flash[:success] = 'Transaction has been successfully created!'
     else
-        render :new
-        flash[:message] = 'Transaction failed to create. Please try again!'
+      render :new
+      flash[:message] = 'Transaction failed to create. Please try again!'
     end
   end
 
