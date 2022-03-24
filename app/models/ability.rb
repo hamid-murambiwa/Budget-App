@@ -16,7 +16,7 @@ class Ability
       can :destroy, Proceeding do |proceeding|
         proceeding.user.id == user.id
       end
-  end
+    end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
