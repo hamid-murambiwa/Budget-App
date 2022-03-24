@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.0"
 
+gem 'bootstrap', '~> 5.1.3'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 
@@ -32,6 +34,8 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'pg'
+
+gem 'sassc-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

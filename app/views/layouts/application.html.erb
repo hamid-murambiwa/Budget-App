@@ -11,8 +11,11 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if flash.any? %>
+    <div class="alert alert-success" role="alert">
+      <%= render "layouts/flash" %>
+    </div>
+  <% end %>
     <%= yield %>
   </body>
 </html>

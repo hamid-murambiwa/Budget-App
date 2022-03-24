@@ -1,9 +1,20 @@
-<%= form_with model: @proceeding, url: user_group_proceedings_path, scope: :proceeding, data: { turbo: false } do |form| %>
+<header id='header-2'>
+  <%= link_to user_group_path(current_user.id, @group.id), class: 'back-arrow' do %>
+    &#10132;
+  <% end %>
+  <span class='back-arrow'>&#9740;</span>
+</header>
+<section class='trans-con'>
+  <h1>Add Transaction</h1>
+  <div class='add-trans'>
+  <%= form_with model: @proceeding, url: user_group_proceedings_path, scope: :proceeding, data: { turbo: false } do |form| %>
+    <%= form.text_field :name, placeholder: 'Name', :required => true %>
 
-    <%= form.text_field :name, placeholder: 'Name', class: 'form-inp'%>
+    <%= form.number_field :amount, placeholder: 'Amount in USD $', :required => true %>
 
-    <%= form.number_field :amount, placeholder: 'amount', class: 'form-inp' %>
-
-    <%= form.submit :Submit , class: "add-button" %>
-
-<% end %>
+    <div class='btn-con'>
+      <%= form.submit :Submit, class: "submit-button" %>
+    </div>
+  <% end %>
+  </div>
+</section>

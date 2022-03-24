@@ -14,6 +14,7 @@ class GroupsController < ApplicationController
         @group.user_id = @user.id
         if @group.save
             redirect_to user_groups_path(@user.id)
+            flash[:success] = 'Category has been successfully created!'
         else
             print 'Something went wrong'
             render :new

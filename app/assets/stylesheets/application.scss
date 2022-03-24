@@ -16,6 +16,7 @@
  body {
     margin: 0;
     padding: 0;
+    height: auto;
 }
 
 header {
@@ -27,6 +28,16 @@ header {
     top: 0;
     background-color: #3778c2;
     color: white;
+}
+
+#header-2 {
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#header-og {
+    justify-content: center;
 }
 
 .menu {
@@ -50,7 +61,8 @@ header {
     font-size: 11px;
     background-color: rgb(225, 225, 225);
     min-height: 100vh;
-    margin-top: 10vh;
+    margin: 0 !important;
+    padding: 60px 0 0 0 !important;
 }
 
 .title-con {
@@ -75,6 +87,7 @@ header {
     grid-template-columns: auto;
     row-gap: 5px;
     padding: 10px;
+    margin-bottom: 80px;
 }
 
 .grid-item {
@@ -128,6 +141,7 @@ header {
     justify-content: center;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     padding: 10px;
     background-color: #5fb523;
@@ -145,3 +159,136 @@ header {
     padding: 15px;
     width: 70%;
 }
+
+#dropdownMenuButton2 {
+    border: none;
+    background-color: transparent;
+}
+
+#dropdownMenuButton2:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+#dropdownMenuButton2::after {
+    border: none;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.trans-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 60px 30px 0 30px !important;
+}
+
+.add-trans {
+    background-color: #3778c2;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.add-trans form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-trans input {
+    padding: 10px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.field label {
+    color: white;
+}
+
+.field input {
+    width: 100%;
+}
+
+.field input:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.field-rem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.field-rem input {
+    margin: 0 10px 0 0;
+}
+
+.btn-con {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit-button {
+    width: auto;
+    background-color: #5fb523;
+    color: white;
+}
+
+.cancel-button {
+    width: auto;
+    background-color: rgb(191, 3, 3);
+    color: white;
+    border: none;
+    margin-left: 10px;
+}
+
+.forgot {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.forgot a {
+    color: white !important;
+}
+
+.cancel-con {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.alert {
+    margin-top: 60px;
+    margin-bottom: -60px !important;
+}
+
+@import "bootstrap";
