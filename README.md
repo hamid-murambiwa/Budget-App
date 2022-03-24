@@ -33,7 +33,7 @@
 
 - Go to the repository folder in your command prompt and navigate into the project file:
 
-      $ cd Blog-App
+      $ cd Budget-App
 
 - Install the Ruby on Rails Gems:
 
