@@ -21,7 +21,7 @@
           <%= group.created_at.strftime(" %d, %B, %Y") %>
         </div>
         <div class="delete-btn-con">
-          <%= Proceeding.where(group_id: group.id).sum(:amount) %>
+        <p>$ <%= Proceeding.where(group_id: group.id).sum(:amount) %></p>
           <%= button_to "Delete", user_group_url(@user.id, group.id), :method => :delete %>
         </div>
       </div>
