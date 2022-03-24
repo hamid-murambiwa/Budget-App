@@ -92,6 +92,8 @@
 ## Acknowledgments
 
 - This project built in Microverse's Fourth Module's Capstone.
+- Thanks to Gregoire Vella on Behance for the original design.
+- [Gregoire Vella](https://www.behance.net/gregoirevella) on Behance the author of the original design,
 
 ## 📝 License
 
