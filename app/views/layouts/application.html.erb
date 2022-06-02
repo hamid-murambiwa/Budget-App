@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>BudgetApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">ails page
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:description" content="This is a mobile web application, that allows you to manage your budget. The budget app lists all transactions associated with a category, and this allows the user to see how much money the user has spent." />
     <meta property="og:image" content="https://user-images.githubusercontent.com/71644515/171601517-12c276e2-dce2-4a2f-b0de-c7c321e5a552.png" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag 'budget.png' %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
