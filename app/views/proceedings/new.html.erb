@@ -2,7 +2,9 @@
   <%= link_to user_group_path(current_user.id, @group.id), class: 'back-arrow' do %>
     &#10132;
   <% end %>
-  <span class='back-arrow'>&#9740;</span>
+  <%= link_to user_groups_path(current_user.id) do %>
+    <%= image_tag('https://user-images.githubusercontent.com/71644515/171589457-27f1e31c-aa93-4ecf-bdf6-afce637e8a7b.png', class:'home') %>
+  <% end %>
 </header>
 <section class='trans-con'>
   <h1>Add Transaction</h1>
@@ -10,7 +12,7 @@
   <%= form_with model: @proceeding, url: user_group_proceedings_path, scope: :proceeding, data: { turbo: false } do |form| %>
     <%= form.text_field :name, placeholder: 'Name', :required => true %>
 
-    <%= form.number_field :amount, placeholder: 'Amount in USD $', :required => true %>
+    <%= form.number_field :amount, placeholder: 'Amount in USD $', :required => true, min:"0", step:"1"  %>
 
     <div class='btn-con'>
       <%= form.submit :Submit, class: "submit-button" %>

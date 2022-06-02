@@ -2,7 +2,9 @@
   <%= link_to user_groups_path(current_user.id), class: 'back-arrow' do %>
     &#10132;
   <% end %>
-  <span class='back-arrow'>&#9740;</span>
+  <%= link_to user_groups_path(current_user.id) do %>
+    <%= image_tag('https://user-images.githubusercontent.com/71644515/171589457-27f1e31c-aa93-4ecf-bdf6-afce637e8a7b.png', class:'home') %>
+  <% end %>
 </header>
 <section class='trans-con'>
   <h1>Add Category</h1>
@@ -10,7 +12,16 @@
     <%= form_with model: @group, url: user_groups_path, scope: :group, data: { turbo: false } do |form| %>
       <%= form.text_field :name, placeholder: 'Name', class: 'form-inp', :required => true %>
 
-      <%= form.url_field :icon, placeholder: 'Enter a link to an icon or leave empty', class: 'form-inp' %>
+      <%= form.select :icon, options_for_select([
+        ['Housing', @icons["Housing"]],
+        ['Transportation' ,@icons["Transportation"]],
+        ['Education' ,@icons["Education"]],
+        ['Bills' ,@icons["Bills"]],
+        ['Food' ,@icons["Food"]],
+        ['Utilities' ,@icons["Utilities"]],
+        ['Insurance' ,@icons["Insurance"]],
+        ['Savings' ,@icons["Savings"]],
+      ]),{ include_blank: "Choose an icon"}, required: true , class:"form-inp"%>
 
       <div class='btn-con'>
         <%= form.submit :Submit , class: "submit-button" %>

@@ -9,13 +9,15 @@
     </ul>
   </div>
   <h2>Categories</h2>
-  <span class='back-arrow'>&#9740;</span>
+  <%= link_to user_groups_path(@user.id) do %>
+    <%= image_tag('https://user-images.githubusercontent.com/71644515/171589457-27f1e31c-aa93-4ecf-bdf6-afce637e8a7b.png', class:'home') %>
+  <% end %>
 </header>
 <section class='container'>
   <div class='grid-container'>
     <% @groups.each do |group| %>
         <div class='grid-item'>
-        <%= image_tag(group.icon, width:'100px', height:'110px', class:'user-img') %>
+        <%= image_tag(group.icon.to_s, width:'100px', height:'110px', class:'user-img') %>
         <div class='details'>
           <%= link_to group.name, user_group_path(@user.id, group.id) %>
           <%= group.created_at.strftime(" %d, %B, %Y") %>

@@ -3,14 +3,16 @@
     &#10132;
   <% end %>
   <h2>Transactions</h2>
-  <span class='back-arrow'>&#9740;</span>
+  <%= link_to user_groups_path(current_user.id) do %>
+    <%= image_tag('https://user-images.githubusercontent.com/71644515/171589457-27f1e31c-aa93-4ecf-bdf6-afce637e8a7b.png', class:'home') %>
+  <% end %>
 </header>
 <section class='container'>
   <div class='title-con'>
-    <h1><%= @group.name %> category</h1>
+    <h3><%= @group.name %> category</h3>
   </div>
   <div class='gift-con'>
-    <h1>Gift credit</h1>
+    <h4>Gift credit:</h4>
     <p>$ <%= Proceeding.where(group_id: @group.id).sum(:amount) %></p>
   </div>
   <div class='grid-container'>

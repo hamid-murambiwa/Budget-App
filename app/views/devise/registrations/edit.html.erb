@@ -3,7 +3,9 @@
     &#10132;
   <% end %>
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
-  <span class='back-arrow'>&#9740;</span>
+  <%= link_to user_groups_path(current_user.id) do %>
+    <%= image_tag('https://user-images.githubusercontent.com/71644515/171589457-27f1e31c-aa93-4ecf-bdf6-afce637e8a7b.png', class:'home') %>
+  <% end %>
 </header>
 <% if resource.errors.full_messages.any? %>
 <div class="alert alert-warning" role="alert">
@@ -23,11 +25,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i class='det'>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em class='det'><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
@@ -37,7 +39,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i class='det'>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
@@ -51,9 +53,10 @@
 </div>
 
 <div class='btn-con'>
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel-button' %></p>
+<p>Unhappy ?</p>
+<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel-button' %>
 </div>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, class: 'back' %>
 </div>
 </section>
