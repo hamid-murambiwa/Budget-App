@@ -15,6 +15,9 @@
 </header>
 <section class='container'>
   <div class='grid-container'>
+    <% if (@groups.empty?) %>
+       <p class="msg">You have no categories yet. Add one by clicking the button below.</p>
+    <% else %>
     <% @groups.each do |group| %>
         <div class='grid-item'>
         <%= image_tag(group.icon.to_s, width:'100px', height:'110px', class:'user-img') %>
@@ -27,6 +30,7 @@
           <%= button_to "Delete", user_group_url(@user.id, group.id), :method => :delete %>
         </div>
       </div>
+    <% end %>
     <% end %>
   </div>
   <div class='add-btn-con'>
