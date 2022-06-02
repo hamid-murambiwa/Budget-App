@@ -4,6 +4,8 @@
 
 > This is a mobile web application, that allows you to manage your budget. The budget app lists all transactions associated with a category, and this allows the user to see how much money the user has spent.
 
+<img width="250" height='500' alt="Screenshot 2021-12-23 at 11 39 42" src="https://user-images.githubusercontent.com/71644515/171601517-12c276e2-dce2-4a2f-b0de-c7c321e5a552.png">
+
 ## Live Link
 
 - [Heroku](https://coolest-budget-app.herokuapp.com/)
